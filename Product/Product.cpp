@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "Utilities.cpp"
+#include "../Utilities.cpp"
 
 // GENERAL TODO: 1. A log for each product who exit and join
 /*
@@ -11,16 +11,18 @@ class Product{
     string admissionDate;
     string exitDate;
     string name;
+    string brand;
     int stock;
     int id;
     float unitPrice; 
     // for more
     // guessing to do date of expire btw (NO, it only can be used to food)
     public:
-    Product(string name, int stock, int id, float unitPrice){
+    Product(string name, string brand, int stock, int id, float unitPrice){
         this->admissionDate = Utilities::getDate();
         this->exitDate = "";
         this->name = name;
+        this->brand = brand;
         this->stock = stock;
         this->id = id;
         this->unitPrice = unitPrice;
@@ -39,5 +41,9 @@ class Product{
     }
     float getUnitPrice(){
         return this->unitPrice;
+    }
+
+    string getBrand(){
+        return this->brand;
     }
 };

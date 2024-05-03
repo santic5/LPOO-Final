@@ -1,16 +1,15 @@
 #include <iostream>
 using namespace std;
-#include "Product/Product.cpp"
+#include "Product.cpp"
 
-//TODO: EXPIRED ITEM SISTEM
+//TODO: EXPIRED ITEM SYSTEM
 class FoodProduct : public Product{
     private:
     string dueDate;
-    string trademark;
     bool defeated;
 
     public:
-    FoodProduct(string name, int stock, int id, float unitPrice, string dueDate, string trademark):Product(name, stock, id, unitPrice){
+    FoodProduct(string name, string dueDate, string brand, int stock, int id, float unitPrice):Product(name, brand, stock, id, unitPrice){
         this->admissionDate = Utilities::getDate();
         this->exitDate = "";
         this->name = name;
@@ -18,7 +17,7 @@ class FoodProduct : public Product{
         this->id = id;
         this->unitPrice = unitPrice;
         this->dueDate = dueDate;
-        this->trademark = trademark;
+        this->brand = brand;
         this->defeated = false;
     }
 
@@ -32,10 +31,6 @@ class FoodProduct : public Product{
 
     string getDueDate(){
         return this->dueDate;
-    }
-
-    string getTrademark(){
-        return this->trademark;
     }
 
 };
