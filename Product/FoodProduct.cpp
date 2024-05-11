@@ -10,7 +10,7 @@ class FoodProduct : public Product{
 
     public:
     FoodProduct(string name, string dueDate, string brand, int stock, int id, float unitPrice):Product(name, brand, stock, id, unitPrice){
-        this->admissionDate = Utilities::getDate();
+        this->admissionDate = Utilities::today();
         this->exitDate = "";
         this->name = name;
         this->stock = stock;

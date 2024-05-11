@@ -13,7 +13,7 @@ class HomeApplianceProduct : public Product{
     public:
     HomeApplianceProduct(string name, string brand, int stock, int id, float unitPrice, float weight,
         float length, float width, float height) : Product(name, brand, stock, id, unitPrice) {
-        this->admissionDate = Utilities::getDate();
+        this->admissionDate = Utilities::today();
         this->exitDate = "";
         this->weight = weight;
         this->length = length;

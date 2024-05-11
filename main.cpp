@@ -7,23 +7,33 @@
 */
 
 #include <iostream>
+#include <list>
+#include "Product/Product.h"
+#include "Utilities/Utilities.h"
 using namespace std;
-#include "Utilities.cpp"
-// #include "Product/Product.cpp"
-// #include "Product/FoodProduct.cpp"
-// #include "Product/HomeApplianceProduct.cpp"
-// #include "Product/SmartProduct.cpp"
 
 int main(){
-    string date;
-    int legibleDate;
-    cout << "DATE DEBUG:" << endl;
-    date = Utilities::getDate();
-    cout << date << endl;
-    legibleDate = Utilities::dateToLegible(date);
-    cout << legibleDate << endl;
-    cout << "END OF DATE DEBUG" << endl;
+    // string date;
+    // bool oldDate;
+    // cout << "DATE DEBUG:" << endl;
+    // date = Utilities::today();
+    // cout << date << endl;
+    // oldDate = Utilities::isOldDate("4/05/2025");
+    // cout << "Result: " << oldDate << endl;
+    // cout << "END OF DATE DEBUG" << endl;
+    // return 0;
 
+    // list<Product> *products;
     
+    // Product product1("Iphone", "Apple", 100, 11231, 3000000);
+    // products->push_back(product1);
+    // for(const auto& product : *products){
+    //     cout << product.toString();
+    // }
+
+    // delete products;
+
+    Product product1("Iphone", "Apple", 100, 11231, 3000000);
+    cout << product1.toString();
     return 0;
 }
