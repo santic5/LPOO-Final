@@ -26,8 +26,10 @@ public:
     string getName();
     string getBrand();
     int getStock();
+    int reduceStock(int toReduce);
     int getId();
     float getUnitPrice();
+    bool operator==(Product &product);
     virtual string toString(); // Set virtual this function
 
     // Setter method
