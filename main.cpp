@@ -42,7 +42,7 @@ int main(){
     winery1.addProduct(product2);
     winery1.addProduct(product3);
     winery1.addProduct(product4);
-    cout << winery1.getProduct(333).toString();
+    cout << winery1.getProduct(334).toString();
     cout << "\n";
     cout << winery1.toString();
     return 0;

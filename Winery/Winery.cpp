@@ -31,15 +31,18 @@ string Winery::toString(){
 list<Product>* Winery::getProducts(){
     return this->products;
 }
-// Function probably returns null in some cases
 Product Winery::getProduct(int id){
-    if(!(existProduct(id))){
-        return products->front();
-    }
-    for(Product prod : *products){
-        if(id == prod.getId()){
-            return prod;
+    try{
+        if(!(existProduct(id))){
+            throw runtime_error("ERROR: THE SELECTED ID DOESNT EXIST IN THE DATABASE. RETURNING FIRST PRODUCT. \n");
         }
+        for(Product prod : *products){
+            if(id == prod.getId()){
+                return prod;
+            }
+        }
+    }catch(runtime_error e){
+        cerr << e.what();
     }
     return products->front();
 }
