@@ -41,6 +41,7 @@ Product Winery::getProduct(int id){
             return prod;
         }
     }
+    return products->front();
 }
 void Winery::addProduct(Product &product){
     Product *pr = &product;
@@ -75,4 +76,5 @@ string Winery::showProducts(){
         statement += to_string(i) + ". " + string("\n")
         + string("\t") + prod.toString() + string("\n");
     }
+    return statement;
 }

@@ -33,6 +33,17 @@ int main(){
     // for(Product prod : products){
     //     cout << prod.toString();
     // }
-
+    Winery winery1("Exito", "Cra 9 # 8-33", 3000);
+    Product product1("Iphone", "Apple", 100, 11231, 3000000);
+    FoodProduct product2("Manzana", "15/05/2024", "Productos frescos s.a", 300, 3323, 2500);
+    HomeApplianceProduct product3("Nevera", "Samsung", 10, 111, 2500000, 1.20, 1.20, 1.30, 2.00);
+    SmartProduct product4("Iphone 15", "Apple", 100, 333, 3000000, 0.250, 0.500, 0.03, 0.900, "iOS", "wifi 6 / Bluetooth");
+    winery1.addProduct(product1);
+    winery1.addProduct(product2);
+    winery1.addProduct(product3);
+    winery1.addProduct(product4);
+    cout << winery1.getProduct(333).toString();
+    cout << "\n";
+    cout << winery1.toString();
     return 0;
 }

@@ -6,15 +6,12 @@ width, height){
     this->os = os;
     this->connectivity = connectivity;
 }
-
 string SmartProduct::getOS(){
     return this->os;
 }
-
 string SmartProduct::getConnectivity(){
     return this->connectivity;
 }
-
 bool SmartProduct::isUpdatePending(){
     return updatePending;
 }

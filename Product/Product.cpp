@@ -33,6 +33,10 @@ int Product::reduceStock(int toReduce){
     this->stock = toReduce - stock;
     return stock;
 }
+int Product::addStock(int toAdd){
+    this->stock = toAdd + stock;
+    return stock;
+}
 int Product::getId(){
     return this->id;
 }
@@ -51,6 +55,6 @@ string Product::toString(){
     "   Fecha Entrada/Salida: " + this->admissionDate + "/" + this->exitDate + string("\n") + 
     "   Stock: " + to_string(this->stock) + ". Precio por unidad: " + to_string(this->unitPrice) + string("\n");
 }
-bool Product::operator==(Product &product){
+bool Product::operator==(Product product){
     return this->id == product.id && this->name == product.name;
 }

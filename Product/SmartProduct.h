@@ -1,7 +1,6 @@
 #ifndef SMARTPRODUCT_H
-#define SMARTPRODUCT_h
+#define SMARTPRODUCT_H
 
-#include "Product.h"
 #include "HomeApplianceProduct.h"
 using namespace std;
 

@@ -23,7 +23,7 @@ class Winery{
     string getName();
     string getAdress();
     int getCapacity();
-    
+    int getFilling();
     string toString();
     list<Product>* getProducts();
     Product getProduct(int id); // Maybe i can add other function who search te obj idk
