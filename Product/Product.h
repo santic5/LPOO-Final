@@ -28,7 +28,7 @@ public:
     int getStock();
     int getId();
     float getUnitPrice();
-    string toString(); // Set virtual this function
+    virtual string toString(); // Set virtual this function
 
     // Setter method
     void setExitDate(string &date); 
