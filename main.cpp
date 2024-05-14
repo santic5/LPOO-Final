@@ -42,8 +42,30 @@ int main(){
     winery1.addProduct(product2);
     winery1.addProduct(product3);
     winery1.addProduct(product4);
-    cout << winery1.getProduct(334).toString();
-    cout << "\n";
+    cout << winery1.getProduct(333).toString();
     cout << winery1.toString();
+    winery1.removeProduct(product4);
+    cout << winery1.toString();
+    cout << "\n";
+    cout << winery1.showProducts();
     return 0;
+
+    /*
+    
+        MENU:
+            ACT AS:
+                1. WINERY:
+                    1. SHOW AND THAT OTHER FX
+                    2. SUPPLY (ABASTECER)
+                    3. STAFF
+                        1. DELETE DEFEATED PRODUCTS
+                        2. GETSTATUS
+                        3. SHOW STAFF
+                        4. MOVE OUT ORDER (AUTOMATIC)
+                        5. PACKAGING PRODUCT
+                    4. TRANSPORT
+                2. CLIENT
+                    1. MAKE A ORDER
+                    2. GET THE ORDER IN HIS RESIDENCY
+    */
 }

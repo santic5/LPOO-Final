@@ -10,6 +10,8 @@
 #include "../Utilities/Utilities.h"
 using namespace std;
 
+
+// TODO: ABAST FUNCTION MAYBE
 class Winery{
     private:
     string name;
@@ -29,6 +31,7 @@ class Winery{
     Product getProduct(int id); // Maybe i can add other function who search te obj idk
     void addProduct(Product &product);
     void removeProduct(Product &Product);
+    void removeProduct(int id);
     bool existProduct(Product &product);
     bool existProduct(int id);
     string showProducts();

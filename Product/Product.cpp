@@ -50,7 +50,7 @@ string Product::getAdmissionDate(){
     return this->admissionDate;
 }
 string Product::toString(){
-    return "Producto: " + string("\n") + 
+    return "   Producto: " + string("\n") + 
     "   Nombre: " + this->name + ". Marca: " + this->brand + ". ID: " + to_string(this->id) + string("\n") +
     "   Fecha Entrada/Salida: " + this->admissionDate + "/" + this->exitDate + string("\n") + 
     "   Stock: " + to_string(this->stock) + ". Precio por unidad: " + to_string(this->unitPrice) + string("\n");
