@@ -17,25 +17,15 @@ string Client::toString(){
     "Home adress: " + this->adress + string("\n") + 
     "Shceduled shipments: " + to_string(this->scheduledShipment) + " - Completed shipments: " + to_string(this->completedShipments) + string("\n"); 
 }
-void Client::addToOrder(list<Product> orderProducts){ //Before add the products to the client, delete the list created in main please :)
-    this->completedOrders++;
-    this->orders.insert(make_pair(completedOrders, orderProducts));
-}
-void Client::addToOrder(Product orderProduct){
-    this->orders[completedOrders].push_back(orderProduct);
-}
-void Client::removeFromOrder(Product orderProduct){
+Order Client::getOrder(int id){
+    auto it = this->orders.find(id);
     try{
-        for(list<Product>::iterator it = orders[completedOrders].begin(); it != orders[completedOrders].end(); it++){
-            Product pr = *it;
-            if(pr.getId() != orderProduct.getId() && next(it) == orders[completedOrders].end()){
-                throw runtime_error("ERROR: THE SELECTED ITEM NOT EXIST IN THIS ORDER.");
-            }else{
-                break;
-            }
+        if(it == this->orders.end()){
+            throw runtime_error("ERROR: THE ORDER SELECTED HAS NOT FOUNDED");
         }
-        this->orders[completedOrders].remove(orderProduct);
+        return it->second;
     }catch(runtime_error e){
         cerr << e.what();
     }
+    return orders[1];
 }
