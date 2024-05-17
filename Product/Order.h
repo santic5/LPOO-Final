@@ -14,12 +14,12 @@ private:
     vector<Product> order;
     string status;
 public:
-    Order(int clientID, int OrderID); // Client ID its the 
+    Order(int clientID, int orderID); // Client ID its the 
     ~Order();
     void add(vector<Product> order);
     void add(Product product);
     void remove(int position);
-    void makeOrder(Winery winery);
+    void makeOrder(Winery &winery);
     void completeOrder();
     string getStatus();
     void setStatus(string status);

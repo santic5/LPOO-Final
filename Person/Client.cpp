@@ -24,8 +24,8 @@ Order Client::getOrder(int id){
             throw runtime_error("ERROR: THE ORDER SELECTED HAS NOT FOUNDED");
         }
         return it->second;
-    }catch(runtime_error e){
+    }catch(const runtime_error& e){
         cerr << e.what();
     }
-    return orders[1];
+    return Order(0,0);
 }

@@ -18,4 +18,4 @@ class SmartProduct : virtual public HomeApplianceProduct{
     bool isUpdatePending();
 };
 
-#endif
+#endif  

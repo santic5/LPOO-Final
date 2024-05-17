@@ -2,7 +2,6 @@
 #define CLIENT_H
 
 #include <iostream>
-#include <vector>
 #include <unordered_map>
 #include "../Product/Order.h"
 #include "Person.h"

@@ -13,16 +13,20 @@ void Order::add(Product product){
     this->order.push_back(product);
 }
 void Order::remove(int position){
-    this->order.erase(order.begin() + position-1);
+    if(position > 0 && position <= this->order.size()){
+        this->order.erase(order.begin() + position - 1);
+    }
 }
-void Order::makeOrder(Winery Winery){
+
+void Order::makeOrder(Winery &Winery){
     this->status = "Paid";
     for(Product prod : order){
         Winery.removeProduct(prod);
     }
 }
 void Order::completeOrder(){
-    delete this;
+    this->status = "Completed";
+    //delete this;
 }
 string Order::getStatus(){
     return this->status;
