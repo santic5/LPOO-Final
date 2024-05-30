@@ -13,7 +13,7 @@ private:
     bool scheduledShipment;
     int completedOrders;
     unordered_map<int, Order> orders;
-    // vector<Order> orders; // USED FOR THE MOMENT, WE WILL CHANGE THE MAP TO AN OBJECT
+    // vector<Order> orders; // USED FOR THE MOMENT, WE WILL CHANGE THE MAP TO AN OBJECT // SOLVED
     // Add more
 public:
     Client(string name, int identification, string adress, int age);

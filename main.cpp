@@ -1,53 +1,27 @@
 /* 
-    FINAL PROYECT
+    FINAL PROYECT - LABORATORY OF POO
     MADE BY:
         - Donnie Santiago Campo
         - Leandro Gabriel Nandar
-        - Lesber 
+        - Lesber Estanga Montezuma
 */
 
+// Libraries
 #include <iostream>
 #include <list>
-#include "Winery/Winery.h"
-#include "Product/Product.h" 
-#include "Product/FoodProduct.h"
-#include "Product/HomeApplianceProduct.h"
-#include "Product/SmartProduct.h"
-#include "Utilities/Utilities.h"
+#include "Logic/Winery/Winery.h"
+#include "Logic/Product/Product.h" 
+#include "Logic/Product/FoodProduct.h"
+#include "Logic/Product/HomeApplianceProduct.h"
+#include "Logic/Product/SmartProduct.h"
+#include "Logic/Utilities/Utilities.h"
 using namespace std;
 
+// TODO APPLY ARQUITECTURA EN CAPAS
+// PRESENTATION, NEGOCIO, DATA ACCESS
+// NEED TO ADD COMPOSITION 
 int main(){
-    // MYSQL* mysql;
-    // mysql = mysql_init(0);
-
-    Winery *bodega; 
-    cout << "AUN NO HA CREADO NINGUNA BODEGA. POR FAVOR, CREELA Y CONTINUE EL PROGRAMA.";
-    string nombre, direccion;
-    int capacity;
-    cout << "Por favor, ingrese el nombre de la bodega: ";
-    cin >> nombre;
-    cout << "\nPor favor, ingrese la direccion de la bodega: ";
-    cin >> direccion;
-    cout << "Por favor, ingrese la capacidad total de la bodega: ";
-    cin >> capacity;
-    bodega = new Winery(nombre, direccion, capacity);
-
-    // TODO: CREATE TOSTRING FUNCTION TO EVERY PRODUCT.
-
-    Product product1("Iphone", "Apple", 100, 11231, 3000000);
-    FoodProduct product2("Manzana", "15/05/2024", "Productos frescos s.a", 300, 3323, 2500);
-    HomeApplianceProduct product3("Nevera", "Samsung", 10, 111, 2500000, 1.20, 1.20, 1.30, 2.00);
-    SmartProduct product4("Iphone 15", "Apple", 100, 333, 3000000, 0.250, 0.500, 0.03, 0.900, "iOS", "wifi 6 / Bluetooth");
-    bodega->addProduct(product1);
-    bodega->addProduct(product2);
-    bodega->addProduct(product3);
-    bodega->addProduct(product4);
-    cout << bodega->getProduct(333).toString();
-    cout << bodega->toString();
-    bodega->removeProduct(product4);
-    cout << bodega->toString();
-    cout << bodega->showProducts();
-
+    
     /*
         MENU:
             ACT AS:

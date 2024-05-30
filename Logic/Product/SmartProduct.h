@@ -5,7 +5,7 @@
 using namespace std;
 
 class SmartProduct : virtual public HomeApplianceProduct{
-    private:
+    protected:
     string os;
     string connectivity;
     bool updatePending;

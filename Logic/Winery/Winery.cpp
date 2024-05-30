@@ -1,6 +1,6 @@
 #include "Winery.h"
 
-// Problems: The winery is literally infinite xd
+// Problems: The winery is literally infinite xd // SOLVED
 Winery::Winery(string name, string adress, int capacity){
     this->name = name;
     this->adress = adress;
@@ -38,7 +38,7 @@ Product Winery::getProduct(int id){
             throw runtime_error("ERROR: THE SELECTED ID DOESNT EXIST IN THE DATABASE. RETURNING FIRST PRODUCT. \n");
         }
         for(Product prod : *products){
-            if(id == prod.getId()){
+            if(id == prod.getId()){   
                 return prod;
             }
         }
@@ -102,4 +102,69 @@ string Winery::showProducts(){
         i++;
     }
     return statement;
+}
+list<Staff>* Winery::getStaff(){
+    return this->staff;
+}
+Staff Winery::getStaff(int id){
+    try{
+        if(!(existStaff(id))){
+            throw runtime_error("ERROR: THE ID DOESNT ASSOCIED WITH ANY STAFF. RETURNING 1ST EMPLOYEE");
+        }
+        for(Staff employee : *staff){
+            if(employee.getIdentification() == id){ 
+                return employee;
+            }
+        }
+    }catch(runtime_error e){
+        cerr << e.what();
+    }
+    return staff->front();
+}
+void Winery::addStaff(Staff &employee){
+    try{
+        if(existStaff(employee)){
+            throw runtime_error("ERROR: THE EMPLOYEE ALREADY EXIST IN THE STAFF");
+        }
+        staff->push_back(employee);
+    }catch(runtime_error e){
+        cerr << e.what();
+    }
+}
+void Winery::removeStaff(Staff &employee){
+    try{
+        if(!(existStaff(employee))){
+            throw runtime_error("ERROR: THE EMPLOYEE DOESNT EXIST");
+        }
+        this->staff->remove(employee); // ?
+    }catch(runtime_error e){
+        cerr << e.what();
+    }
+}
+void Winery::removeStaff(int id){
+    try{
+        if(!(existStaff(id))){
+            throw runtime_error("ERROR: THE EMPLOYEE DOESNT EXIST");
+        }
+        Staff employee = getStaff(id);
+        this->staff->remove(employee);
+    }catch(runtime_error e){
+        cerr << e.what();
+    }
+}
+bool Winery::existStaff(int id){
+    for(Staff st : *staff){
+        if(st.getIdentification() == id){
+            return true;
+        }
+    }
+    return false;
+}
+bool Winery::existStaff(Staff &employee){
+    for(Staff st : *staff){
+        if(employee == st){
+            return true;
+        }
+    }
+    return false;
 }
