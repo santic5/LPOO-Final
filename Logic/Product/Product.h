@@ -15,6 +15,7 @@ protected:
     float unitPrice;
 public:
     // Constructor
+    Product();
     Product(string name, string brand, int stock, int id, float unitPrice);
 
     // Destructor (if necessary)

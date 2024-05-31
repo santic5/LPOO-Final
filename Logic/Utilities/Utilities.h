@@ -14,4 +14,4 @@ public:
     // static int incomingInt(int length, string text);
 };
 
-#endif // UTILITIES_H
+#endif

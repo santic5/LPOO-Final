@@ -16,6 +16,7 @@ class SmartProduct : virtual public HomeApplianceProduct{
     string getOS();
     string getConnectivity();
     bool isUpdatePending();
+    string toString() override;
 };
 
 #endif  

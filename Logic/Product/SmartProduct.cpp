@@ -15,3 +15,8 @@ string SmartProduct::getConnectivity(){
 bool SmartProduct::isUpdatePending(){
     return updatePending;
 }
+string SmartProduct::toString() {
+    return HomeApplianceProduct::toString() + "   Sistema Operativo: " + this->os + string("\n") +
+           "   Conectividad: " + this->connectivity + string("\n") +
+           "   Actualización Pendiente: " + to_string(updatePending);
+}

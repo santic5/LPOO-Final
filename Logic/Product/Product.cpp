@@ -16,6 +16,7 @@ Product::Product(string name, string brand, int stock, int id, float unitPrice){
     this->id = id;
     this->unitPrice = unitPrice;
 }
+Product::Product(){}
 Product::~Product(){}
 void Product::setExitDate(string &date){
     this->exitDate = date;
@@ -50,10 +51,10 @@ string Product::getAdmissionDate(){
     return this->admissionDate;
 }
 string Product::toString(){
-    return string("\n") + "   Producto: " + string("\n") + 
+    return "   Producto: " + string("\n") + 
     "   Nombre: " + this->name + ". Marca: " + this->brand + ". ID: " + to_string(this->id) + string("\n") +
-    "   Fecha Entrada/Salida: " + this->admissionDate + "/" + this->exitDate + string("\n") + 
-    "   Stock: " + to_string(this->stock) + ". Precio por unidad: " + to_string(this->unitPrice) + string("\n");
+    "   Fecha Entrada/Salida: " + this->admissionDate + "-" + this->exitDate + string("\n") + 
+    "   Stock: " + to_string(this->stock) + ". Precio por unidad: " + to_string(this->unitPrice);
 }
 bool Product::operator==(Product product){
     return this->id == product.id && this->name == product.name;

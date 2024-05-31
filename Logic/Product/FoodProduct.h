@@ -15,6 +15,7 @@ class FoodProduct : public Product{
     void setDefeated();
     bool isDefeated();
     string getDueDate();
+    string toString() override;
 };
 
 #endif

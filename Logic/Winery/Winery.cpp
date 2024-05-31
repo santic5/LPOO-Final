@@ -1,12 +1,14 @@
 #include "Winery.h"
 
 // Problems: The winery is literally infinite xd // SOLVED
+Winery::Winery(){}
 Winery::Winery(string name, string adress, int capacity){
     this->name = name;
     this->adress = adress;
     this->capacity = capacity;
     this->filling = 0;
     this->products = new list<Product>; // I SEE SOMETHING INTERESTING WHO CAN MAKE THIS DIFFERENT, I CAN MAKE A MAP IN THIS PLACE
+    this->staff = new list<Staff>;
     // WHO CAN HAVE THE ID AS KEY AND THE PRODUCT AS THE ELEMENT. TO MAKE THIS I NEED TO REMOVE ID ATRIBUTE FROM PRODUCT AND ADD THEM HERE
 }
 Winery::~Winery(){
@@ -25,7 +27,7 @@ int Winery::getFilling(){
     return this->filling;
 }
 string Winery::toString(){
-    return string("\n") + "Winery: " + this->name + " (" + this->adress + ")" + string("\n") +
+    return string("\n") + "Bodega " + string("\n") + "Nombre: " + this->name + " (" + this->adress + ")" + string("\n") +
     "Capacity status: " + to_string(this->filling) + "/" + to_string(this->capacity) + string("\n") +
     "Products: " + to_string(this->products->size()) + string("\n");
 }
@@ -48,9 +50,16 @@ Product Winery::getProduct(int id){
     return this->products->front();
 }
 void Winery::addProduct(Product &product){
-    Product *pr = &product;
-    this->products->push_back(*pr);
-    this->filling += product.getStock();
+    try{
+        if(capacity == filling){
+            throw runtime_error("ERROR: THE CAPACITY IS FULL");
+        }
+        Product *pr = &product;
+        this->products->push_back(*pr);
+        this->filling += product.getStock();
+    }catch(runtime_error e){
+        cerr << e.what();
+    }
 }
 void Winery::removeProduct(Product &product){
     try{
@@ -94,7 +103,7 @@ bool Winery::existProduct(int id){
     return false;
 }
 string Winery::showProducts(){
-    string statement = "Products in Winery" + string("\n");
+    string statement = "Productos en Bodega" + string("\n");
     int i = 1; 
     for(Product prod : *products){
         statement += to_string(i) + ". " + string("\n")
@@ -167,4 +176,14 @@ bool Winery::existStaff(Staff &employee){
         }
     }
     return false;
+}
+string Winery::showStaff(){
+    string statement = "Personal en Bodega" + string("\n");
+    int i = 1; 
+    for(Staff employee : *staff){
+        statement += to_string(i) + ". " + string("\n")
+        + employee.toString() + string("\n");
+        i++;
+    }
+    return statement;
 }

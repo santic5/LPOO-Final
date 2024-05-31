@@ -20,4 +20,8 @@ float HomeApplianceProduct::getWidth(){
 float HomeApplianceProduct::getHeight(){
     return this->height;
 }
-
+string HomeApplianceProduct::toString() {
+    return Product::toString() + "   Peso: " + to_string(this->weight) + " kg\n" + 
+    "  Dimensiones: " + to_string(this->length) + " longitud " + to_string(this->width) + " ancho " + 
+    to_string(this->height) + " Altura cm\n";
+}

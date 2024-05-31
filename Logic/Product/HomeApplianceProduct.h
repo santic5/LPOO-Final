@@ -20,6 +20,7 @@ class HomeApplianceProduct : public Product{
     float getLength();
     float getWidth();
     float getHeight();
+    string toString() override;
 };
 
 #endif

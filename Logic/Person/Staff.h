@@ -14,11 +14,13 @@ class Staff : public Person{
         float timeWorking;
     public: 
         Staff(string name, int identification, string adress, int age, string jobTitle, float salary);
+        Staff();
         string getJobTitle();
         float getSalary();
         float getTimeWorking();
         bool operator==(Staff staff);
-        string serialize() override;
+        string toString();
+        string serialize();
         static Staff deserialize(const string& data);
 };
 #endif

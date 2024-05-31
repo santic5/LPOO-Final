@@ -7,6 +7,8 @@ Person(name, identification,adress, age){
     this->timeWorking = 0.1; // decimal means month
 }
 
+Staff::Staff():Person(){}
+
 string Staff::getJobTitle(){
     return this->jobTitle;
 }
@@ -24,6 +26,11 @@ bool Staff::operator==(Staff staff){
         return true;
     }
     return false;
+}
+
+string Staff::toString(){
+    return "    Nombre: " + name + ", id: " + to_string(identification) + ", edad: " + to_string(age) + string("\n") +
+    "    direccion: " + adress + ", cargo: " + jobTitle + ", salario: " + to_string(salary);
 }
 
 string Staff::serialize(){

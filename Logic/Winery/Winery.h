@@ -25,6 +25,7 @@ class Winery{
     
     public:
     // CONSTRUCTOR:
+    Winery();
     Winery(string name, string adress, int capacity);
     // DESTRUCTOR:
     ~Winery();

@@ -22,3 +22,7 @@ bool FoodProduct::isDefeated(){
 string FoodProduct::getDueDate(){
     return this->dueDate;
 }
+string FoodProduct::toString() {
+    return Product::toString() + "   Fecha de Vencimiento: " + this->dueDate + string("\n") + 
+           "   Vencido: " + to_string(defeated);
+}

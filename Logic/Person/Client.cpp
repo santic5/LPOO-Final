@@ -12,7 +12,7 @@ bool Client::isScheduledShipment(){
     return this->scheduledShipment;
 }
 string Client::toString(){
-    return string("\n") + "Client: " + this->name + " (id: " + to_string(this->identification) + string("\n") + " age: " + to_string(this->age) + 
+    return string("\n") + "Client: " + this->name + " (id: " + to_string(this->identification) + string(")\n") + "age: " + to_string(this->age) + 
     " yrs old" + string("\n") + 
     "Home adress: " + this->adress + string("\n") + 
     "Shceduled shipments: " + to_string(this->scheduledShipment) + " - Completed shipments: " + to_string(this->completedShipments) + string("\n"); 
@@ -28,10 +28,4 @@ Order Client::getOrder(int id){
         cerr << e.what();
     }
     return Order(0,0);
-}
-string Client::serialize(){
-    return "hola";
-}
-void Client::deserialize(istream& in){
-    
 }

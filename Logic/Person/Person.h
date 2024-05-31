@@ -12,13 +12,13 @@ protected:
     int age; 
 public:
     Person(string name, int identification, string adress, int age);
+    Person();
     ~Person();
     string getName();
     string getAdress();
     int getIdentification();
     int getAge();
-    virtual string serialize() = 0;
-    //virtual Staff deserialize(const string& data) = 0;
+    //virtual string serialize() = 0;
 };
 
 #endif
