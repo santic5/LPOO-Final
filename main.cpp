@@ -9,6 +9,8 @@
 // Libraries
 #include <iostream>
 #include <list>
+#include "Database/Database.h"
+#include "Database/Logs.h"
 #include "Logic/Winery/Winery.h"
 #include "Logic/Product/Product.h" 
 #include "Logic/Product/FoodProduct.h"
@@ -21,6 +23,12 @@ using namespace std;
 // PRESENTATION, NEGOCIO, DATA ACCESS
 // NEED TO ADD COMPOSITION 
 int main(){
+    LogFile logs("logs.txt");
+    DatabaseFile db("database.txt");
+
+
+    db.write("0001.Persona", "HOLA COMO ESTAS");
+    logs.write("0002.Phola", "30030303");
     
     /*
         MENU:
