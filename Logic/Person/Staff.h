@@ -16,5 +16,7 @@ class Staff : public Person{
         float getSalary();
         float getTimeWorking();
         bool operator==(Staff staff);
+        void serialize(ostream& out) override;
+        void deserialize(istream& in) override;
 };
 #endif

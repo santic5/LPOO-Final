@@ -17,6 +17,8 @@ public:
     string getAdress();
     int getIdentification();
     int getAge();
+    virtual void serialize(ostream& out) = 0;
+    virtual void deserialize(istream& in) = 0;
 };
 
 #endif

@@ -5,6 +5,8 @@ string Utilities::today(){
 	tm* date_now = localtime(&now);
 	return to_string(date_now->tm_mday) + "/" + to_string(date_now->tm_mon+1) + "/" + to_string(date_now->tm_year + 1900);
 }
+
+
 // bool Utilities::isOldDate(string date){
 // 	string auxDate;
 // 	time_t now = time(nullptr);

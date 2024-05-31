@@ -22,6 +22,8 @@ public:
     bool isScheduledShipment();
     Order getOrder(int id);
     string toString();
+    void serialize(ostream& out);
+    void deserialize(istream& in);
 };
 
 #endif

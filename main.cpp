@@ -11,6 +11,7 @@
 #include <list>
 #include "Database/Database.h"
 #include "Database/Logs.h"
+#include "Database/Utilities.h"
 #include "Logic/Winery/Winery.h"
 #include "Logic/Product/Product.h" 
 #include "Logic/Product/FoodProduct.h"
@@ -19,17 +20,12 @@
 #include "Logic/Utilities/Utilities.h"
 using namespace std;
 
-// TODO APPLY ARQUITECTURA EN CAPAS
+// TODO APPLY ARQUITECTURA EN CAPAS /SUCESS
 // PRESENTATION, NEGOCIO, DATA ACCESS
 // NEED TO ADD COMPOSITION 
 int main(){
     LogFile logs("logs.txt");
-    DatabaseFile db("database.txt");
-
-
-    db.write("0001.Persona", "HOLA COMO ESTAS");
-    logs.write("0002.Phola", "30030303");
-    
+    Staff staff("hola", 1061, "Calle 2 # 37-36", 18, "Gerente", 1.234);
     /*
         MENU:
             ACT AS:
