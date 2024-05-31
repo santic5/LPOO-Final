@@ -4,7 +4,9 @@
 // TODO: Staff class can transport  the objects into the winery. I mean, theres can be a time to transport the object out the winery.
 // Queue homeworks maybe?
 // TODO: MAYBE I CAN CREATE A OBJECT CALLED: ORDER // SOLVED
+#include <sstream>
 #include "Person.h"
+
 class Staff : public Person{
     private:
         string jobTitle;
@@ -16,7 +18,7 @@ class Staff : public Person{
         float getSalary();
         float getTimeWorking();
         bool operator==(Staff staff);
-        void serialize(ostream& out) override;
-        void deserialize(istream& in) override;
+        string serialize() override;
+        static Staff deserialize(const string& data);
 };
 #endif

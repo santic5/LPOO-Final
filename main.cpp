@@ -26,6 +26,7 @@ using namespace std;
 int main(){
     LogFile logs("logs.txt");
     Staff staff("hola", 1061, "Calle 2 # 37-36", 18, "Gerente", 1.234);
+    logs.write(to_string(staff.getIdentification()), staff.serialize());
     /*
         MENU:
             ACT AS:

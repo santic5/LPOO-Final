@@ -29,17 +29,8 @@ Order Client::getOrder(int id){
     }
     return Order(0,0);
 }
-void Client::serialize(ostream& out){
-    out << name << "\n";
-    out << identification << "\n";
-    out << adress << "\n";
-    out << age << "\n";
-    out << completedShipments << "\n";
-    out << scheduledShipment << "\n";
-    out << completedOrders << "\n";
-    for(int i = 0; i < orders.size(); i++){
-        orders.at(i);   
-    }
+string Client::serialize(){
+    return "hola";
 }
 void Client::deserialize(istream& in){
     

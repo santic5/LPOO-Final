@@ -1,0 +1,2 @@
+1061:
+Staff(name: hola, identification: 1061, address: Calle 2 # 37-36, age: 18, jobTitle: Gerente, salary: 1.234)

@@ -22,7 +22,7 @@ public:
     bool isScheduledShipment();
     Order getOrder(int id);
     string toString();
-    void serialize(ostream& out);
+    string serialize() override;
     void deserialize(istream& in);
 };
 

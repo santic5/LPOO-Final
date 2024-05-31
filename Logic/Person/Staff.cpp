@@ -26,28 +26,45 @@ bool Staff::operator==(Staff staff){
     return false;
 }
 
-void Staff::serialize(ostream& out){
-    out << name << "\n";
-    out << identification << "\n";
-    out << adress << "\n";
-    out << age << "\n";
-    out << jobTitle << "\n";
-    out << salary << "\n";
-    out << timeWorking << "\n";
+string Staff::serialize(){
+    std::ostringstream oss;
+    oss << "Staff(name: " << name
+        << ", identification: " << identification
+        << ", address: " << adress
+        << ", age: " << age
+        << ", jobTitle: " << jobTitle
+        << ", salary: " << salary << ")";
+    return oss.str();
 }
 
-void Staff::deserialize(istream& in){
-    getline(in, name);
-    in.ignore();
-    in >> identification;
-    in.ignore();
-    getline(in, adress);
-    in.ignore();
-    in >> age;
-    in.ignore();
-    getline(in, jobTitle);
-    in.ignore();
-    in >> salary;
-    in.ignore();
-    in >> timeWorking;            
+Staff Staff::deserialize(const string& data) {
+    string name, address, jobTitle;
+    int age, identification;
+    double salary;
+
+    size_t pos1 = data.find("name: ") + 6;
+    size_t pos2 = data.find(", identification: ");
+    name = data.substr(pos1, pos2 - pos1);
+
+    pos1 = pos2 + 17;
+    pos2 = data.find(", address: ");
+    identification = stoi(data.substr(pos1, pos2 - pos1));
+
+    pos1 = pos2 + 11;
+    pos2 = data.find(", age: ");
+    address = data.substr(pos1, pos2 - pos1);
+
+    pos1 = pos2 + 6;
+    pos2 = data.find(", jobTitle: ");
+    age = stoi(data.substr(pos1, pos2 - pos1));
+
+    pos1 = pos2 + 11;
+    pos2 = data.find(", salary: ");
+    jobTitle = data.substr(pos1, pos2 - pos1);
+
+    pos1 = pos2 + 9;
+    pos2 = data.find(")", pos1);
+    salary = stod(data.substr(pos1, pos2 - pos1));
+
+    return Staff(name, identification, address, age, jobTitle, salary);
 }

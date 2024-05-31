@@ -17,8 +17,8 @@ public:
     string getAdress();
     int getIdentification();
     int getAge();
-    virtual void serialize(ostream& out) = 0;
-    virtual void deserialize(istream& in) = 0;
+    virtual string serialize() = 0;
+    //virtual Staff deserialize(const string& data) = 0;
 };
 
 #endif
