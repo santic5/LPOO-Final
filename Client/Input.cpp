@@ -84,4 +84,23 @@ Product Input::readProduct() {
     
     return Product(name, brand, stock, id, unitPrice);
 }
+
+Winery Input::readWinery() {
+    string name = Input::readString("Ingrese el nombre de la bodega: ");
+    string address = Input::readString("Ingrese la dirección de la bodega: ");
+    int capacity = Input::readInt("Ingrese la capacidad de la bodega: ");
+        
+    return Winery(name, address, capacity);
+}
+
+Staff Input::readStaff() {
+    string name = readString("Ingrese el nombre del personal: ");
+    int identification = readInt("Ingrese el ID del personal: ");
+    string address = readString("Ingrese la dirección del personal: ");
+    int age = readInt("Ingrese la edad del personal: ");
+    string jobTitle = readString("Ingrese el título del trabajo del personal: ");
+    float salary = readFloat("Ingrese el salario del personal: ");
+    
+    return Staff(name, identification, address, age, jobTitle, salary);
+}
 // need to create default product

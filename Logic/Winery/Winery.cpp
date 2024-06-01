@@ -1,7 +1,14 @@
 #include "Winery.h"
 
 // Problems: The winery is literally infinite xd // SOLVED
-Winery::Winery(){}
+Winery::Winery(){
+    this->name = "";
+    this->adress = "";
+    this->capacity = 100;
+    this->filling = 0;
+    this->products = new list<Product>; // I SEE SOMETHING INTERESTING WHO CAN MAKE THIS DIFFERENT, I CAN MAKE A MAP IN THIS PLACE
+    this->staff = new list<Staff>;
+}
 Winery::Winery(string name, string adress, int capacity){
     this->name = name;
     this->adress = adress;
@@ -103,11 +110,10 @@ bool Winery::existProduct(int id){
     return false;
 }
 string Winery::showProducts(){
-    string statement = "Productos en Bodega" + string("\n");
-    int i = 1; 
-    for(Product prod : *products){
-        statement += to_string(i) + ". " + string("\n")
-        + prod.toString() + string("\n");
+    string statement = "Productos en Bodega:\n";
+    int i = 1;
+    for (auto& prod : *products) {
+        statement += to_string(i) + ". " + prod.toString() + "\n";
         i++;
     }
     return statement;

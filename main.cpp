@@ -4,6 +4,8 @@
         - Donnie Santiago Campo
         - Leandro Gabriel Nandar
         - Lesber Estanga Montezuma
+    FIND IT ON:
+    https://github.co1m/santic5/LPOO-Final
 */
 
 // Libraries
@@ -24,7 +26,7 @@
 using namespace std;
 
 int main() {
-    Winery winery;  
+    Winery winery("La real", "cl 2 # 37-36", 3000);  
     list<Client> clients;
 
     Product product;
@@ -92,14 +94,15 @@ int main() {
                             }
                             break;
                         case 6:
-                            // Agregar personal (no implementado)
+                            staff = Input::readStaff();
+                            winery.addStaff(staff);
                             break;
                         case 7:
                             aux = Input::readInt("Ingrese el ID a eliminar: ");
                             winery.removeStaff(aux);
                             break;
                         case 8:
-                            cout << winery.getStaff() << endl;
+                            cout << winery.showStaff() << endl;
                             break;
                         case 9:
                             aux = Input::readInt("Ingrese el ID a verificar: ");
@@ -116,10 +119,10 @@ int main() {
                             cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
                     }
                 } while (wchoise != 10);
-                break;  // Este `break` es para el `case 1` del `switch` principal.
+                break; 
             }
             case 2: {
-                // Aquí iría el manejo de cliente.
+                
                 break;
             }
             case 3:

@@ -6,6 +6,8 @@
 #include "../Logic/Product/FoodProduct.h"
 #include "../Logic/Product/HomeApplianceProduct.h"
 #include "../Logic/Product/SmartProduct.h"
+#include "../Logic/Winery/Winery.h"
+#include "../Logic/Person/Staff.h"
 using namespace std;
 
 class Input {
@@ -18,6 +20,8 @@ public:
     static HomeApplianceProduct readHomeApplianceProduct();
     static SmartProduct readSmartProduct();
     static Product readProduct();
+    static Winery readWinery();
+    static Staff readStaff();
 };
 
 #endif
